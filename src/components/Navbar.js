@@ -1,5 +1,5 @@
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-import React from "react";
+import React, { useEffect } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { BsChatLeft } from "react-icons/bs";
 import { FiShoppingCart } from "react-icons/fi";
@@ -10,8 +10,35 @@ import avatar from "../data/avatar.jpg";
 import { Cart, Chat, Notification, UserProfile } from ".";
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, handleClick, isClicked } =
-    useStateContext();
+  const {
+    activeMenu,
+    setActiveMenu,
+    handleClick,
+    isClicked,
+    screenSize,
+    setScreenSize,
+  } = useStateContext();
+
+  useEffect(() => {
+    const Handlescreen = () => {
+      setScreenSize(window.innerWidth);
+    };
+    window.addEventListener("resize", Handlescreen);
+    Handlescreen();
+
+    return () => window.removeEventListener("resize", handleClick);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    console.log(screenSize);
+    if (screenSize < 900) {
+      setActiveMenu(false);
+    } else {
+      setActiveMenu(true);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [screenSize]);
 
   const handletoogle = () => {
     setActiveMenu(!activeMenu);
