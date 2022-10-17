@@ -5,8 +5,11 @@ import { FiSettings } from 'react-icons/fi';
 
 import './App.css'
 import { Sidebar } from './components';
+import { useStateContext } from './contexts/ContextProvider';
+
 const App = () => {
-  const [activeMenu, setActivemenu] = useState(true)
+  const {  activeMenu } = useStateContext();
+  console.log(activeMenu)
   return (
     <div>
       <BrowserRouter>
