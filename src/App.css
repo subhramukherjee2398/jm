@@ -7,6 +7,15 @@
 .navbar {
   z-index: 10000;
 }
+
+.illustration-img{
+  background: url("https://static.vecteezy.com/system/resources/thumbnails/000/593/429/small/B012.jpg");
+  background-position: right;
+  object-fit: cover;
+}
+.first-tab-design{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
 @media  screen and (max-width:800px) {
   .sidebar{
     z-index: 10000000;
@@ -27,6 +36,7 @@
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
 
 /* color-picker style  */
 
