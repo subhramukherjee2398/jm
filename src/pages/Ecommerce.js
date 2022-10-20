@@ -3,6 +3,7 @@ import { BsCurrencyDollar } from 'react-icons/bs';
 import Button from '../components/Button';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
+import SparkLine from '../components/Charts/SparkLine'
 const Ecommerce = () => {
     return (
         <div className="mt-24" style={{ backgroundColor: 'yellow' }}>
@@ -86,10 +87,20 @@ const Ecommerce = () => {
 
                                 <p className="text-gray-500 mt-1">Expense</p>
                             </div>
-                            <div>
-                                
+                            <div className="mt-5">
+                                <SparkLine currentColor={'blue'} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={'blue'} />
                             </div>
-
+                            <div className="mt-10">
+                                <Button
+                                    color="white"
+                                    bgColor={'blue'}
+                                    text="Download Report"
+                                    borderRadius="10px"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            ddddd
                         </div>
                     </div>
                 </div>
