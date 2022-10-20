@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import SparkLine from '../components/Charts/SparkLine'
+import Stacked from '../components/Charts/Stacked';
 const Ecommerce = () => {
     return (
         <div className="mt-24" style={{ backgroundColor: 'yellow' }}>
@@ -100,7 +101,7 @@ const Ecommerce = () => {
                             </div>
                         </div>
                         <div>
-                            ddddd
+                        <Stacked  width="320px" height="360px" />
                         </div>
                     </div>
                 </div>
