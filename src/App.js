@@ -10,6 +10,10 @@ import Ecommerce from './pages/Ecommerce';
 import Orders from './pages/Orders';
 import Employees from './pages/Empolyees';
 import Customers from './pages/Customers';
+import Calender from './pages/Calender';
+import Kanban from './pages/Kanban';
+import Editor from './pages/Editor';
+import ColorPicker from './pages/ColorPicker';
 
 const App = () => {
 
@@ -51,6 +55,13 @@ const App = () => {
               <Route path='/orders' element={<Orders/>} />
               <Route path='/employees' element={<Employees/>} />
               <Route path='/customers' element={<Customers/>} />
+               
+               {/**apps */}
+               <Route path='/calendar' element={<Calender/>} />
+               <Route path='/kanban' element={<Kanban/>} />
+               <Route path='/editor' element={<Editor/>} />
+               <Route path='/color-picker' element={<ColorPicker/>} />
+
             </Routes>
           </div>
           </div>
