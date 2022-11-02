@@ -17,6 +17,7 @@ const Navbar = () => {
     isClicked,
     screenSize,
     setScreenSize,
+    currentColor
   } = useStateContext();
 
   useEffect(() => {
@@ -27,7 +28,7 @@ const Navbar = () => {
     Handlescreen();
 
     return () => window.removeEventListener("resize", handleClick);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -37,7 +38,7 @@ const Navbar = () => {
     } else {
       setActiveMenu(true);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [screenSize]);
 
   const handletoogle = () => {
@@ -67,28 +68,28 @@ const Navbar = () => {
       <Navbutton
         title="Menus"
         customFunc={handletoogle}
-        color={"blue"}
+        color={currentColor}
         icon={<AiOutlineMenu />}
       />
       <div className="flex">
         <Navbutton
           title="Chat"
           customFunc={() => handleClick("chat")}
-          color={"blue"}
+          color={currentColor}
           dotColor="rgb(254, 201, 15)"
           icon={<BsChatLeft />}
         />
         <Navbutton
           title="Notification"
           customFunc={() => handleClick("notification")}
-          color={"blue"}
+          color={currentColor}
           dotColor="#03C9D7"
           icon={<RiNotification3Line />}
         />
         <Navbutton
           title="Cart"
           customFunc={() => handleClick("cart")}
-          color={"blue"}
+          color={currentColor}
           icon={<FiShoppingCart />}
         />
         <TooltipComponent content="Profile" position="BottomCenter">

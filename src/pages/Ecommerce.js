@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { BsCurrencyDollar } from 'react-icons/bs';
 import Button from '../components/Button';
 import { GoPrimitiveDot } from 'react-icons/go';
 import { earningData, medicalproBranding, recentTransactions, weeklyStats, dropdownData, SparklineAreaData, ecomPieChartData } from '../data/dummy';
 import SparkLine from '../components/Charts/SparkLine'
 import Stacked from '../components/Charts/Stacked';
+import { useStateContext } from '../contexts/ContextProvider';
 const Ecommerce = () => {
+    const {currentColor} = useStateContext()
     return (
         <div className="mt-24">
             <div className="flex flex-wrap lg:flex-nowrap justify-center">
@@ -17,7 +19,7 @@ const Ecommerce = () => {
                             <p className="text-2xl">$63,448.78</p>
                         </div>
                         <button type="button"
-                            style={{ backgroundColor: 'blue' }}
+                            style={{ backgroundColor: currentColor }}
                             className="text-2xl opacity-0.9 text-white hover:drop-shadow-xl rounded-full  p-4">
                             <BsCurrencyDollar />
                         </button>
@@ -25,7 +27,7 @@ const Ecommerce = () => {
                     <div className="mt-6">
                         <Button
                             color="white"
-                            bgColor='blue'
+                            bgColor={currentColor}
                             text="Download"
                             borderRadius="10px"
                         />
@@ -89,12 +91,12 @@ const Ecommerce = () => {
                                 <p className="text-gray-500 mt-1">Expense</p>
                             </div>
                             <div className="mt-5">
-                                <SparkLine currentColor={'blue'} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={'blue'} />
+                                <SparkLine currentColor={currentColor} id="line-sparkLine" type="Line" height="80px" width="250px" data={SparklineAreaData} color={currentColor} />
                             </div>
                             <div className="mt-10">
                                 <Button
                                     color="white"
-                                    bgColor={'blue'}
+                                    bgColor={currentColor}
                                     text="Download Report"
                                     borderRadius="10px"
                                 />

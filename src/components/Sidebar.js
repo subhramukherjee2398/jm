@@ -7,7 +7,7 @@ import { links } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
 
 const Sidebar = () => {
-  const { activeMenu, setActiveMenu, screenSize } = useStateContext();
+  const { activeMenu, setActiveMenu, screenSize, currentColor } = useStateContext();
 
   const handleSidebar = () => {
     if (activeMenu && screenSize < 900) {
@@ -34,7 +34,7 @@ const Sidebar = () => {
           <TooltipComponent content="Menu" position="BottomCenter">
             <button
               type="button"
-              style={{ color: "red" }}
+              style={{ color: currentColor }}
               className="text-xl rounded-full p-3 mt-4 block hover:bg-light-gray "
               onClick={() => setActiveMenu((prevstate) => !prevstate)}
             >
@@ -56,6 +56,9 @@ const Sidebar = () => {
                 to={`/${links.name}`}
                 key={links.name}
                 onClick={handleSidebar}
+                style={({ isActive }) => ({
+                  backgroundColor: isActive ? currentColor : '',
+                })}
                 className={({ isActive }) =>
                   isActive ? activeLink : normalLink
                 }
